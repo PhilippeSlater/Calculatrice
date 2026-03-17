@@ -1,0 +1,146 @@
+.container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: sans-serif;
+}
+
+
+
+h2 {
+  margin-bottom: 1.5rem;
+}
+
+/* ── Input ── */
+.input-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.input-row input {
+  flex: 1;
+  font-family: monospace;
+  font-size: 16px;
+  padding: 8px 12px;
+}
+
+.input-row button {
+  padding: 8px 20px;
+  cursor: pointer;
+}
+
+/* ── Exemples ── */
+.examples {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  align-items: center;
+}
+
+.examples span {
+  font-size: 13px;
+  color: #888;
+}
+
+.examples button {
+  font-size: 12px;
+  font-family: monospace;
+  padding: 3px 10px;
+  cursor: pointer;
+}
+
+/* ── Erreur ── */
+.error-box {
+  padding: 10px 14px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  background: #FCEBEB;
+  border: 1px solid #E24B4A;
+  border-radius: 8px;
+  color: #A32D2D;
+}
+
+/* ── Résultat ── */
+.result-box {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 24px;
+  padding: 10px 16px;
+  background: #E1F5EE;
+  border-left: 3px solid #1D9E75;
+  border-radius: 6px;
+}
+
+.result-box .label {
+  font-size: 13px;
+  color: #0F6E56;
+}
+
+.result-box .value {
+  font-size: 26px;
+  font-weight: 500;
+  font-family: monospace;
+}
+
+/* ── Tokens ── */
+.tokens-section {
+  margin-bottom: 24px;
+}
+
+.tokens-section .section-label {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.tokens-list {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.token {
+  font-family: monospace;
+  font-size: 13px;
+  padding: 3px 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.token-number { background: #E1F5EE; color: #06b91e; border: 1px solid #06b91e; }
+.token-op     { background: #EEEDFE; color: #0a26c4; border: 1px solid #0a26c4; }
+.token-paren  { background: #FAEEDA; color: #ff8800; border: 1px solid #ff8800; }
+.token-fn     { background: #FBEAF0; color: #ff00d4; border: 1px solid #00fae5; }
+
+/* ── Arbre ── */
+.tree-section {
+  background: #1a1a2e; 
+  border-radius: 10px;
+  border: 1px solid #eee;
+  padding: 16px;
+  overflow-x: auto;
+}
+
+
+.tree-section .section-label {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+/* ── Nœuds SVG ── */
+.node-num   { fill: #E1F5EE; stroke: #06b91e; }
+.node-op    { fill: #EEEDFE; stroke: #0a26c4; }
+.node-fn { fill: #FBEAF0; stroke: #ff00d4; }
+
+.text-num       { fill: #06b91e; }
+.text-op        { fill: #0a26c4; }
+.text-fn     { fill: #ff00d4; }
+.text-num-sub   { fill: #0F6E56; }
+.text-op-sub    { fill: #0a26c4; }
+.text-fn-sub { fill: #ff00d4; }
+
+.tree-edge { stroke: #ccc; }
