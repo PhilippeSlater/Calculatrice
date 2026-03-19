@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: calculatrice-ui
+    runtime: static
+    buildCommand: cd expression-ui && npm install && npm run build
+    staticPublishPath: expression-ui/dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

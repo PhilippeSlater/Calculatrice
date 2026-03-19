@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react'
 import './App.css'
 
-const API = 'http://localhost:5214'
+const API = 'https://calculatrice-api-dp8n.onrender.com'
 
 // -- Utilitaires ───────────────────────────────────────────────────────────────
 const fmt = v =>
