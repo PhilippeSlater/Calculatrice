@@ -2,8 +2,8 @@ services:
   - type: web
     name: calculatrice-ui
     runtime: static
-    buildCommand: cd expression-ui && npm install && npm run build
-    staticPublishPath: expression-ui/dist
+    buildCommand: cd calculatrice-ui && npm install && npm run build
+    staticPublishPath: calculatrice-ui/dist
     routes:
       - type: rewrite
         source: /*
