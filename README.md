@@ -24,14 +24,14 @@ cd calculatrice
 ### Frontend
 
 ```bash
-cd client   # ou le dossier de votre UI
+cd CalculatriceUi
 npm install
 ```
 
 ### Backend
 
 ```bash
-cd server   # ou le dossier de votre backend
+cd CalculatriceApi/CalculatriceApi
 dotnet restore
 ```
 
@@ -51,22 +51,3 @@ dotnet run
 
 L'application sera disponible par défaut sur `http://localhost:5173` (Vite) et l'API sur `http://localhost:5000` (ou le port configuré dans `launchSettings.json`).
 
-## Structure du projet
-
-```
-calculatrice/
-├── client/          # Interface React
-│   ├── src/
-│   └── package.json
-└── server/          # API .NET
-    ├── Controllers/
-    └── *.csproj
-```
-
-## Contribuer
-
-Les pull requests sont les bienvenues. Pour des changements majeurs, ouvrez d'abord une issue pour discuter de ce que vous souhaitez modifier.
-
-## Licence
-
-[MIT](LICENSE)
