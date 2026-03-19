@@ -11,8 +11,8 @@ public class ExprService
         var tokenDtos      = Tokenizer.ToDTOs(internalTokens);
         var tree           = new Parser(internalTokens).ParseInternal();
         var result         = tree.Eval();
-        var astJson        = tree.ToTreeNode();
+        var treeJson        = tree.ToTreeNode();
 
-        return (result, astJson, tokenDtos);
+        return (result, treeJson, tokenDtos);
     }
 }

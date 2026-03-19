@@ -136,15 +136,24 @@ function TokenBadge({ token }) {
 
 // ── App ────────────────────────────────────────────────────────────────────
 const EXAMPLES = [
-  '3 + 4 * 2',
-  '(3 + 4) * 2',
-  '2 ^ 3 ^ 2',
-  'sqrt(16) + 2 * 3',
-  'sqrt(2^4 + 2)'
+  '1 + 1',
+  '1 + 2',
+  '1 + -1',
+  '-1 - -1',
+  '5 - 4',
+  '5 * 2',
+  '(2 + 5) *3',
+  '10 / 2',
+  '2 + 2 * 5 + 5',
+  '2.8 * 3 - 1',
+  '2^8',
+  '2^8 * 5 - 1',
+  'sqrt(4)',
+  '1 / 0'
 ]
 
 export default function App() {
-  const [expr, setExpr]       = useState('3 + 4 * 2')
+  const [expr, setExpr]       = useState('1 + 1')
   const [result, setResult]   = useState(null)
   const [tree, setTree]       = useState(null)
   const [tokens, setTokens]   = useState([])
@@ -163,14 +172,14 @@ export default function App() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ Input: e })
       })
-
+      
       const data = await res.json()
+      console.log(JSON.stringify(data.tree, null, 2))
       if (!res.ok) {
         setError(data.error)
         setTree(null); setResult(null); setTokens([])
         return
       }
-
       setResult(data.result)
       setTree(data.tree)
       setTokens(data.tokens)
@@ -193,7 +202,7 @@ export default function App() {
           value={expr}
           onChange={e => setExpr(e.target.value)}
           onKeyDown={e => e.key === 'Enter' && calculate()}
-          placeholder="ex: sqrt(2^4 + 2)"
+          placeholder="ex: 1 + 1"
         />
         <button onClick={() => calculate()} disabled={loading}>
           {loading ? '...' : 'Calculer'}

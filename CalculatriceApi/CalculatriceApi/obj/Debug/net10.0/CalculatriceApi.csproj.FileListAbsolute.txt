@@ -26,3 +26,4 @@ C:\Users\Proprio\Desktop\Calculatrice\CalculatriceApi\CalculatriceApi\obj\Debug\
 C:\Users\Proprio\Desktop\Calculatrice\CalculatriceApi\CalculatriceApi\obj\Debug\net10.0\CalculatriceApi.pdb
 C:\Users\Proprio\Desktop\Calculatrice\CalculatriceApi\CalculatriceApi\obj\Debug\net10.0\CalculatriceApi.genruntimeconfig.cache
 C:\Users\Proprio\Desktop\Calculatrice\CalculatriceApi\CalculatriceApi\obj\Debug\net10.0\ref\CalculatriceApi.dll
+C:\Users\Proprio\Desktop\Calculatrice\CalculatriceApi\CalculatriceApi\obj\Debug\net10.0\CalculatriceApi.sourcelink.json

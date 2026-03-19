@@ -31,7 +31,7 @@ class BinNode(string operatorm, Node left, Node right) : Node
             "*" => leftVal * rightVal,
             "/" => rightVal != 0 ? leftVal / rightVal : throw new DivideByZeroException(),
             "^" => Math.Pow(leftVal, rightVal),
-            _ => throw new Exception($"Unknown operator {operatorm}")
+            _ => throw new Exception($"Opérateur inconnu {operatorm}")
         };
     }
 
@@ -50,9 +50,9 @@ class FuncNode(string function, Node argument) : Node
             "sin" => Math.Sin(argVal),
             "cos" => Math.Cos(argVal),
             "tan" => Math.Tan(argVal),
-            "log" => argVal > 0 ? Math.Log(argVal) : throw new Exception("Logarithm of non-positive number"),
-            "sqrt" => argVal >= 0 ? Math.Sqrt(argVal) : throw new Exception("Square root of negative number"), // Ne supporte pas les nombres complexes
-            _ => throw new Exception($"Unknown function {function}")
+            "log" => argVal > 0 ? Math.Log(argVal) : throw new Exception("Logarithme de nombre négatif ou zéro n'est pas défini"),
+            "sqrt" => argVal >= 0 ? Math.Sqrt(argVal) : throw new Exception("Racine carrée de nombre négatif"), // Ne supporte pas les nombres complexes
+            _ => throw new Exception($"Fonction inconnue {function}")
         };
     }
 

@@ -47,7 +47,9 @@ public class Tokenizer
             if (char.IsDigit(c) || c == '.')
             {
                 int start = i;
-                while (i < input.Length && (char.IsDigit(input[i]) || input[i] == '.'))
+                //Si on entre ..2 on recoit l'erreur seulement au convertisage en double
+                //Pourrais valider le dernier caractere pour eviter les erreurs de format de nombre, mais c'est plus simple de laisser le double.TryParse gerer ca et lancer une exception si le format est invalide
+                while (i < input.Length && (char.IsDigit(input[i]) || input[i] == '.')) //TODO : Permettre les notations scientifiques (ex: 1.23e-4)
                     i++;
                 var numberStr = input.Substring(start, i - start);
                 if (double.TryParse(numberStr, out double number))
@@ -57,12 +59,13 @@ public class Tokenizer
                 }
                 else
                 {
-                    throw new Exception($"Invalid number format: {numberStr}");
+                    throw new Exception($"Format de nombre invalide: {numberStr}");
                 }
             }
 
             //Si ses une function, elle commence par une lettre
             //TODO: Permettre des functions qui commencerais par des chiffres, doit modifier le elle de IsDigit
+            //Pourrais penser a ajouter une notion de constante (ex: pi, e) qui serait traité comme des fonctions sans argument
             if (char.IsLetter(c))
             {
                 int start = i;
@@ -76,7 +79,7 @@ public class Tokenizer
                     "tan" => TokenType.Tan,
                     "log" => TokenType.Log,
                     "sqrt" => TokenType.Sqrt,
-                    _ => throw new Exception($"Unknown function: {funcStr}")
+                    _ => throw new Exception($"Fonction inconnue: {funcStr}")
                 };
                 tokens.Add(new Token(tokenType, StrValue: funcStr));
                 continue;

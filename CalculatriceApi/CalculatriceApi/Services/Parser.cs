@@ -18,7 +18,7 @@ public class Parser(List<Token> tokens)
         while (Peek()?.Type is TokenType.Plus or TokenType.Minus) //Termine lorsque le prochain token n'est pas + ou - ou est null (fin de l'expression)
         {
             string op = Consume().Type == TokenType.Plus ? "+" : "-";
-            node = new BinNode(op, node, ParseTerm());
+            node = new BinNode(op, node, ParseTerm ());
         }
         return node;
     }
